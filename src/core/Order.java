@@ -4,9 +4,9 @@
  */
 package core;
 
-import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Date;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -20,7 +20,6 @@ public class Order {
     int numberOfTables;
     Date preferedDate;
 
-    List<Integer> randomNumberList;
     // Constructor 4 tham số để tạo 1 order - tự code
     public Order(String custCode, String setMenuCode, int numberOfTables, Date preferedDate) {
         this.custCode = custCode;
@@ -41,14 +40,6 @@ public class Order {
         this.preferedDate = preferedDate;
     }
     
-    public void printOrder() {
-        Random random = new Random();
-        id = random.nextInt(100);
-        randomNumberList.add(id);
-        System.out.println("---------------------------------------------------");
-        System.out.println("Customer order information [Order ID: " + id + "]");
-        System.out.println("---------------------------------------------------");
-    }
     
     // Hàm tra bằng nhau dựa trên 3 yếu tố costCode, setMenuCode, preferedDate
     // tự code - dùng toán tử AND: &&
